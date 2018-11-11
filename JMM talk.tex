@@ -1,0 +1,499 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+\usecolortheme[rgb={0.3164,   0.1562, 0.5312}]{structure}
+%\useoutertheme{infolines}
+%\useinnertheme{rectangles}
+\usetheme{Boadilla}
+%\usetheme{split}
+
+%\usepackage{beamerfoils}
+\beamertemplatetheoremsnumbered
+
+\usetheme[height=7mm]{Rochester}
+\setbeamertemplate{items}[ball]
+%\setbeamertemplate{blocks}[default]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{caption}[numbered] %This is for numbering the figures, make sure
+%that the file caption.sty is in the home directory. The file caption.sty can be
+%downloaded from http://www.bestkevin.com/Download/various/sty/
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+\usepackage{mathrsfs}
+
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+\usepackage{comment}
+
+\newtheorem{question}{Question}
+\newtheorem{questions}{Questions}
+\newtheorem{defi}{Definition}
+\newtheorem{coro}{Corollary}
+\newtheorem{lema}{Lemma}
+
+\newtheorem{thm}{Theorem} % used for known results
+\renewcommand{\thethm}{\Alph{thm}}
+\newtheorem{lem}[thm]{Lemma} % used for known results
+%\renewcommand{\thelem}{\Alph{lem}}
+
+\newtheorem{thmm}{Theorem C (BBMNT, 2013)}
+\renewcommand{\thethmm}{}
+
+\newcommand{\cor}{\color{red}}
+
+\newcommand{\fk}{\varphi_k}
+\newcommand{\fj}{\varphi_j}
+\newcommand{\psik}{\psi_k}
+\newcommand{\f}{\varphi}
+\newcommand{\tf}{\tilde{\varphi}}
+\newcommand{\tfk}{\tilde{\varphi}_k}
+
+
+\newcommand{\rtn}{{\mathbb R}^{2n}}
+\newcommand{\zptn}{\mathbb Z^{2n}_+}
+\newcommand{\na}{\mathbb{N}}
+\newcommand{\re}{\mathbb{R}}
+\newcommand{\rn}{{{\mathbb R}^n}}
+\newcommand{\ent}{\mathbb{Z}}
+\newcommand{\ra}{\mathbb{Q}}
+\newcommand{\com}{\mathbb{C}}
+\newcommand{\toro}{\mathbb{T}}
+\newcommand{\rno}{\re^{n_1}}
+\newcommand{\rnt}{\re^{n_2}}
+\newcommand{\rnot}{\re^{2n_1}}
+\newcommand{\rntt}{\re^{2n_2}}
+
+\newcommand{\abs}[1]{\vert #1 \vert}
+\newcommand{\lp}[2]{\|#1\|_{#2}}
+\newcommand{\fr}[2]{{\textstyle \frac{#1}{#2}}}
+\newcommand{\lr}[2]{L^{#1}_{#2}}
+\newcommand{\mn}[3]{\|#1\|_{#2\,#3}}
+\newcommand{\norm}[2]{{\left\| #1 \right\|}_{#2}}
+\newcommand{\csupp}[1]{\mathcal{C}_c^\infty(\re^{#1})}
+\newcommand{\cz}{Calder\'on--Zygmund }
+\newcommand{\jap}[1]{\langle #1\rangle}
+\newcommand{\FR}[2]{{\textstyle \frac{#1}{#2}}}
+\newcommand{\bsz}{BS_{\rho,\delta}^0}
+\newcommand{\cc}{\mathcal{C}}
+\newcommand{\cs}{\mathcal{S}}
+\newcommand{\s}{\mathcal{S}}
+\newcommand{\sw}{{\mathcal{S}}(\rn)}
+\newcommand{\japp}{\langle \xi,\eta\rangle}
+\newcommand{\vp}{\varphi}
+\newcommand{\te}{\theta}
+\newcommand{\rttn}{\mathbb{R}^{3n}}
+
+
+
+\newcommand{\hPhi}{\widehat{\Phi}}
+\newcommand{\hPsi}{\widehat{\Psi}}
+\newcommand{\hf}{\widehat{f}}
+\newcommand{\hg}{\widehat{g}}
+
+
+\newcommand{\ms}{\mathcal{M}^{\#}}
+\newcommand{\hl}{\mathcal{M}}
+\newcommand{\hld}{\mathcal{M}_2}
+\newcommand{\qi}{{s_{\rho\tau}}}
+\newcommand{\qtil}{{\tilde{Q}}}
+\newcommand{\qc}{{x_Q}}
+
+
+\newcommand{\hh}{\hat h}
+\newcommand{\mf}{\mathcal{F}}
+\newcommand{\mfi}{\mathcal{F}^{-1}}
+\newcommand{\hb}{\bar{h}}
+\newcommand{\hhb}{\bar{\hat{h}}}
+\newcommand{\m}{m}
+\newcommand{\dx}{\, dx}
+\newcommand{\dy}{\, dy}
+\newcommand{\dz}{\, dz}
+\newcommand{\ds}{\, ds}
+\newcommand{\dt}{\, dt}
+\newcommand{\de}{\, d\eta}
+\newcommand{\dxi}{\, d\xi}
+\newcommand{\da}{\, da}
+\newcommand{\db}{\, db}
+\newcommand{\dtau}{\,d\tau}
+\newcommand{\deta}{\, d\eta}
+\newcommand{\dzeta}{\, d\zeta}
+\newcommand{\dxe}{\,d\xi d\eta}
+\newcommand{\ei}[2]{e^{i #1 \cdot #2}}
+\newcommand{\emi}[2]{e^{-i #1 \cdot #2}}
+
+
+\newcommand{\fhat}{\widehat{f}}
+\newcommand{\ghat}{\widehat{g}}
+
+\newcommand{\eixxi}{e^{2\pi i x \cdot \xi}}
+\newcommand{\eixeta}{e^{2\pi i x \cdot \eta}}
+\newcommand{\eixzeta}{e^{2\pi i x \cdot \zeta}}
+\newcommand{\eixxe}{e^{2\pi i x \cdot (\xi + \eta)}}
+
+
+\newcommand{\swp}{{\mathcal{S}'}(\rn)}
+
+\newcommand{\diver}{\text{div}}
+
+\newcommand{\Lap}{\mathcal{L}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathscr{B}}
+
+
+\newcommand{\Ff}{\mathscr{F}}
+
+
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb Z}
+
+\newcommand{\subR}{{\mathbb R}}
+\newcommand{\subRn}{{{\mathbb R}^n}}
+\newcommand{\sumjZ}{\sum\limits_{j \in \ent}}
+
+
+% Useful operators
+
+% \DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator*{\essinf}{ess\,inf}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Abbreviations useful for variable Lebesgue spaces
+
+\newcommand{\pp}{{p(\cdot)}}
+\newcommand{\cpp}{{p'(\cdot)}}
+\newcommand{\Lp}{L^{p(\cdot)}}
+\newcommand{\Pp}{\mathcal P}
+\newcommand{\qq}{{q(\cdot)}}
+\newcommand{\cqq}{{q'(\cdot)}}
+\newcommand{\Lq}{L^{q(\cdot)}}
+\newcommand{\rr}{{r(\cdot)}}
+\newcommand{\crr}{{r'(\cdot)}}
+\newcommand{\bp}{{\bar{p}(\cdot)}}
+\newcommand{\cbp}{{\bar{p}'(\cdot)}}
+\newcommand{\bq}{{\bar{q}(\cdot)}}
+\newcommand{\cbq}{{\bar{q}'(\cdot)}}
+\newcommand{\br}{{\bar{r}(\cdot)}}
+\newcommand{\cbr}{{\bar{r}'(\cdot)}}
+\newcommand{\bsdot}[2]{\dot{BS}^{#1}_{#2}}
+\newcommand{\bs}[2]{BS^{#1}_{#2}}
+\newcommand{\cinf}{\mathcal{C}^\infty}
+\newcommand{\cinfr}{\mathcal{C}^\infty(\rn)}
+
+\newcommand{\Fdot}[2]{\dot{F}^{#1}_{#2}}
+\newcommand{\Fdotrn}[2]{\dot{F}^{#1}_{#2}(\rn)}
+\newcommand{\fdot}[2]{\dot{f}^{#1}_{#2}}
+\newcommand{\fdotrn}[2]{\dot{f}^{#1}_{#2}(\rn)}
+
+
+%\newcommand{\F}{\mathcal{F}}
+\newcommand{\Rf}{\mathcal{R}}
+\newcommand{\ps}{{p^*(\cdot)}}
+
+\newcommand{\supp}{\operatorname{supp}}
+
+\newcommand{\heqp}{\frac{1}{p}=\frac{1}{p_1}+\frac{1}{p_2}} %to be used in equation enviroment
+\newcommand{\heqq}{\frac{1}{q}=\frac{1}{q_1}+\frac{1}{q_2}} %to be used in equation enviroment
+\newcommand{\hlinep}{1/p=1/p_1+1/p_2} %to be used within text
+\newcommand{\hlineq}{1/q=1/q_1+1/q_2} %to be used within text
+
+%TL SPACES
+\newcommand{\tlw}[4]{\dot F_{#1,#3}^{#2}(#4)} %weighted homogeneous Triebel-Lizorkin space: #1=p (L^p norm), #2=s (regularity), #3=q (l^q norm), #4=weight
+\newcommand{\tl}[3]{\dot F_{#1,#3}^{#2}} %unweighted homogeneous Triebel-Lizorkin space
+\newcommand{\itlw}[4]{F_{#1,#3}^{#2}(#4)} %weighted inhomogeneous Triebel-Lizorkin space: #1=p (L^p norm), #2=s (regularity), #3=q (l^q norm), #4=weight
+\newcommand{\itl}[3]{F_{#1,#3}^{#2}} %unweighted inhomogeneous Triebel-Lizorkin space
+%BESOV SPACES
+\newcommand{\besw}[4]{\dot B_{#1,#3}^{#2}(#4)} %weighted homogeneous Besov space: #1=p (L^p norm), #2=s (regularity), #3=q (l^q norm), #4=weight
+\newcommand{\bes}[3]{\dot B_{#1,#3}^{#2}} %unweighted homogeneous Besov space
+\newcommand{\ibesw}[4]{B_{#1,#3}^{#2}(#4)} %weighted inhomogeneous Besov space: #1=p (L^p norm), #2=s (regularity), #3=q (l^q norm), #4=weight
+\newcommand{\ibes}[3]{B_{#1,#3}^{#2}} %unweighted inhomogeneous Besov space
+
+%LEBESGUE SPACES
+\newcommand{\lebw}[2]{L^{#1}(#2)} %weighted Lebesgue space with #1=index and #2=weight 
+
+\newcommand{\hc}{\frac{1}{p}=\frac{1}{p_1}+\frac{1}{p_2}}
+\newcommand{\hcline}{1/p=1/p_1+1/p_2}
+\newcommand{\swz}{{\mathcal{S}_0}(\rn)}
+\newcommand{\Do}[2]{\Delta^{#1}_{#2}}
+\newcommand{\So}[2]{S^{#1}_{#2}}
+\newcommand{\A}{D}
+
+
+\def\dss{\displaystyle}
+\def\less{\lesssim}
+
+
+% commands to create average integrals with horizontal bar
+
+\newcommand{\aver}[1]{-\hskip-0.46cm\int_{#1}}
+\newcommand{\textaver}[1]{-\hskip-0.40cm\int_{#1}}
+
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\avgint{\Xint-}
+
+
+
+
+%\setbeamertemplate{footline}[frame number]
+
+
+
+\title[Leibniz-type rules]{Leibniz-type rules and applications to scattering properties of PDEs II}
+\author[Alex Thomson]{Alex Thomson}
+
+
+
+\institute[Kansas State University]{
+Department of Mathematics%\\[1ex]
+% \begin{center}
+% \includegraphics[width=0.25\textwidth]{ksulogo2.jpg}
+%\end{center}
+ }
+
+\date[January 2019]{Joint Mathematics Meetings\\ January 2019}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}\frametitle{Kato--Ponce inequalities}
+For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2},$ that is,
+\begin{align*}
+\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
+\end{align*}
+
+\pause
+\bigskip
+
+For $1<p<\infty$ and $s\ge 0,$ 
+\begin{align*}
+\norm{J^s(fg)}{L^p} &\lesssim   \norm{J^sf}{L^p} \norm{g}{L^\infty}+ \norm{f}{L^{\infty}} \norm{J^sg}{L^p},\\
+& \\
+\norm{J^s(fg)-fJ^s(g)}{L^p} &\lesssim  \norm{J^sf}{L^p} \norm{g}{L^\infty}+ \norm{\nabla f}{L^\infty} \norm{J^{s-1}g}{L^p}.
+\end{align*}
+ 
+ \bigskip
+
+Such estimates played an important role in the treatment by Kato and Ponce (1988) of the Cauchy problem for the Euler and Navier--Stokes equations in the setting of Sobolev spaces. 
+\end{frame}
+
+\begin{frame} \frametitle{Fractional Leibniz rules}
+
+More generally, it holds that
+\begin{align*}
+ \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
+ &\\
+   \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}, 
+\end{align*}
+where 
+\begin{align*}
+&1<p_1,p_2\le \infty, \fr{1}{2}<p\le \infty, \hcline, \\
+&s\in 2\na_0 \text{ or } s>\tau_p,  \tau_p:=n({1}/{\min(p,1)}-1).
+\end{align*}
+(Different choices of $p_1$ and $p_2$ can be used on the right-hand sides of the inequalities above.)
+
+\end{frame}
+
+\begin{frame} \frametitle{Weighted Leibniz-type rules for C--M multiplier operators II}
+
+For $w\in A_\infty,$  let $\tau_w=\inf\{\tau\in [1,\infty): w\in A_\tau\};$ if  $0<p,q\le \infty$ denote 
+\begin{equation*}
+\tau_{p,q}(w) := n \left(\frac{1}{\min(p/\tau_w,q,1)} - 1 \right).
+\end{equation*} 
+
+\begin{theorem}[N.--Thomson, 2018]\label{thm:CM:TL:B}  
+Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. Consider  $0 < q \leq \infty$ and $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ 
+
+\medskip
+
+If  $w_1,w_2\in A_\infty,$ $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$  and  $s > \tau_{p,q}(w),$  it holds that
+\begin{equation*}
+\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s}{q}{w_2} }.
+\end{equation*}
+If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above; moreover, if $w\in A_\infty,$ then 
+\begin{equation*}
+\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p}{s}{q}{w} } \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{g}{\tlw{p}{s}{q}{w}}.
+\end{equation*}
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}{Previous Results}
+For $s \ge 0$ set $D^s:=(-\Delta)^{s/2},$ that is,
+\begin{align*}
+\widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
+\end{align*}
+%\begin{itemize}
+%\item $\norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}$
+%\end{itemize}
+
+\bigskip
+
+Let $1<p_1,p_2<\infty$, $\fr{1}{2} < p < \infty$, $ \frac{1}{p_1} + \frac{1}{p_2} = \frac{1}{p} $ and  $s\in 2\N_0$ or  $s> n(\fr{1}{min(p,1)} - 1)$, $w_1 \in A_{p_1}$, $w_2 \in A_{p_2}$, $w =w^{p/p_1}_1 w^{p/p_2}_2$, and $\sigma$ a Coifman-Meyer multiplier.
+
+\bigskip
+
+\begin{theorem}[Cruz-Uribe-Naibo, 2016]
+$ \norm{D^s(fg)}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}$
+\end{theorem}
+
+\begin{theorem}[Brummer-Naibo, 2017]
+$\norm{D^s(T_\sigma(f,g))}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}$
+\end{theorem}
+
+%\begin{itemize}
+%
+%\item \begin{align*}
+% \norm{D^s(fg)}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}
+% \end{align*}
+%\item \begin{align*}
+%\norm{D^s(T_\sigma(f,g))}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}.
+% \end{align*}
+%
+%\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Definitions: Muckenhoupt Weights}
+\begin{itemize}
+\item For $0<p<\infty$ and a weight $w$ on $\rn$, we say that $f\in L^p(w)$ if 
+ $$
+\norm{f}{\lebw{p}{w}}=\left(\int_\rn\abs{f(x)}^pw(x)\dx\right)^{\frac{1}{p}}<\infty.
+ $$
+\item For $1<p<\infty$, a weight $w$ on $\rn$ is an $A_p$ weight if 
+\begin{equation*}
+ \sup_Q\left(\frac{1}{\abs{Q}}\int_Qw(x)\dx\right)\left(\frac{1}{\abs{Q}}\int_Qw(x)^{-\frac{1}{p-1}}\dx\right)^{p-1}<\infty.
+ \end{equation*}
+ \bigskip
+\item $A_\infty=\bigcup_{p>1} A_p$
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Definitions: Weighted Triebel-Lizorkin Spaces}
+Let $\psi$ be a function in $\sw$ satisfying the conditions
+\begin{itemize}
+\item supp($\widehat{\psi})\subset \{\xi \in \rn :\fr{1}{2} < |\xi| < 2 \}$
+\medskip
+\item $|\widehat{\psi}(\xi)| > c$ for all $\xi$ such that $\fr{3}{5}<|\xi|<\fr{5}{3}$ and some $c>0$
+\medskip
+\item $\widehat{\Delta^\psi_j f}(\xi) := \widehat{\psi}(2^{-j}\xi)\widehat{f}(\xi)$
+\end{itemize}
+\bigskip
+For $s\in\re,$  $0<p<\infty,$  $0<q\le \infty$ and $w\in A_\infty,$   the homogeneous weighted Triebel-Lizorkin space $\tlw{p}{s}{q}{w}$ consists of all $f\in \swp/\mathcal{P}(\rn)$ such that 
+\begin{equation*}
+\norm{f}{\tlw{p}{s}{q}{w}}=\norm{\left(\sum_{j\in\ent}(2^{sj}|\Delta^\psi_jf|)^q\right)^{\frac{1}{q}}}{\lebw{p}{w}}<\infty.
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}{Definitions: Weighted Hardy spaces}
+Let $\varphi\in \sw$ be such that $\int_{\rn}\varphi(x)\dx\neq 0.$ Given $0<p<\infty,$ the Hardy space $H^p(w)$ is defined as the class of tempered distributions such that
+\[
+\norm{f}{H^p(w)}:= \norm{\sup_{0<t<\infty} \abs{t^{-n}\varphi(t^{-1}\cdot)\ast f}}{L^p(w)}<\infty.
+\]
+
+  {\bf Remark:} 
+  \begin{itemize}
+  \item $H^p(w)\simeq\tlw{p}{0}{2}{w}$  for $0<p<\infty$ and $w\in A_\infty.$ 
+  \item $\tlw{p}{0}{2}{w}\simeq L^p(w)\simeq H^p(w)$ and $\tlw{p}{s}{2}{w}\simeq \dot{W}^{s,p}(w)$ for $1<p<\infty,$ $s\in\re$ and $w\in A_p.$  
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{New Result}
+For $w\in A_\infty,$  let $\tau_w=\inf\{\tau\in [1,\infty): w\in A_\tau\};$ if  $0<p,q\le \infty$ denote 
+\begin{equation*}
+\tau_{p,q}(w) := n \left(\frac{1}{\min(p/\tau_w,q,1)} - 1 \right).
+\end{equation*} 
+
+\begin{theorem}[Naibo--T., 2018] 
+Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. Consider  $0 < q \leq \infty$ and $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ 
+
+\medskip
+
+If  $w_1,w_2\in A_\infty,$ $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$  and  $s > \tau_{p,q}(w),$  it holds that
+\begin{equation*}
+\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s}{q}{w_2} }.
+\end{equation*}
+If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above; moreover, if $w\in A_\infty,$ then 
+\begin{equation*}
+\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p}{s}{q}{w} } \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{g}{\tlw{p}{s}{q}{w}}.
+\end{equation*}
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}\frametitle{Weighted Leibniz-type rules for C--M multiplier operators II}
+
+Lifting property for  weighted homogeneous Triebel-Lizorkin spaces: If $0 < p,q < \infty$ and $w\in A_\infty,$ it holds that 
+$$\norm{f}{\dot{F}^s_{p,q}(w)}\simeq \norm{D^s f}{\dot{F}^0_{p,q}(w)}.$$
+
+
+\begin{corollary}[N.--Thomson, 2018]\label{coro:KP:CM:Hardy}  Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
+Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ 
+
+\medskip
+
+If  $w_1,w_2\in A_\infty,$  $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$ and   $s > \tau_{p,2}(w),$ it holds that
+\begin{equation}\label{KP:CM:Hardy}
+\norm{D^s(T_\sigma(f,g))}{H^p(w)} \lesssim \norm{D^s f}{H^{p_1}(w_1)} \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{H^{p_2}(w_2)}.
+\end{equation}
+If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand side of \eqref{KP:CM:Hardy}; moreover, if $w\in A_\infty,$ then 
+\begin{equation}\label{Kp:CM:Hardy2}
+\norm{D^s(T_\sigma(f,g))}{H^p(w)} \lesssim \norm{D^s f}{H^{p}(w)} \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{D^s g}{H^{p}(w)}.
+\end{equation}
+
+\end{corollary}
+\end{frame}
+
+\begin{frame}\frametitle{Other settings for Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy}}
+
+\begin{itemize}
+\item Coifman--Meyer multipliers of order $m:$
+\begin{equation*}
+\abs{\partial_\xi^\alpha\partial_\eta^\beta\sigma(\xi,\eta)}\lesssim (\abs{\xi}+\abs{\eta})^{m-\abs{\alpha+\beta}} \quad \quad \forall (\xi,\eta)\neq(0,0).
+\end{equation*}
+The corresponding multiplier operators satisfy
+\begin{equation*}
+\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s+m}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s+m}{q}{w_2} },
+\end{equation*}
+as well as versions of the other estimates in Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy}.
+
+\bigskip
+
+\item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in other function space settings: weighted homogeneous Besov spaces and weighted inhomogeneous Triebel--Lizorkin and Besov spaces; the latter contexts involve the operator $J^s.$
+
+\end{itemize}
+\end{frame}
+
+
+\end{document}
