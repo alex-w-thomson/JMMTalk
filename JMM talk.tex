@@ -262,13 +262,15 @@
 
 
 
-\title[Leibniz-type rules]{Leibniz-type rules and applications to scattering properties of PDEs II}
+\title[Leibniz-type rules]{Bilinear multiplier operators Leibniz-type rules}
 \author[Alex Thomson]{Alex Thomson}
 
 
 
 \institute[Kansas State University]{
-Department of Mathematics%\\[1ex]
+Department of Mathematics \\
+Kansas State University
+%\\[1ex]
 % \begin{center}
 % \includegraphics[width=0.25\textwidth]{ksulogo2.jpg}
 %\end{center}
@@ -282,122 +284,131 @@ Department of Mathematics%\\[1ex]
   \titlepage
 \end{frame}
 
-\begin{frame}\frametitle{Kato--Ponce inequalities}
+
+\begin{frame}
+\begin{align*}
+\partial^\alpha_x(fg)(x) & = \sum_{\alpha_1 + \alpha_2 = \alpha} c_{\alpha_1,\alpha_2} \partial^{\alpha_1}_x f(x) \partial^{\alpha_2}_x g(x)\\
+& =\partial^\alpha_x f(x) g(x) + f(x) \partial^\alpha_x g(x) + ...
+\end{align*}
+
+\begin{itemize}
+\item 
+
+\item 
+\item
+\end{itemize}
+
+
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Fractional Leibniz rules}
 For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2},$ that is,
 \begin{align*}
 \widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
 \end{align*}
 
-\pause
-\bigskip
-
-For $1<p<\infty$ and $s\ge 0,$ 
-\begin{align*}
-\norm{J^s(fg)}{L^p} &\lesssim   \norm{J^sf}{L^p} \norm{g}{L^\infty}+ \norm{f}{L^{\infty}} \norm{J^sg}{L^p},\\
-& \\
-\norm{J^s(fg)-fJ^s(g)}{L^p} &\lesssim  \norm{J^sf}{L^p} \norm{g}{L^\infty}+ \norm{\nabla f}{L^\infty} \norm{J^{s-1}g}{L^p}.
-\end{align*}
- 
- \bigskip
-
-Such estimates played an important role in the treatment by Kato and Ponce (1988) of the Cauchy problem for the Euler and Navier--Stokes equations in the setting of Sobolev spaces. 
-\end{frame}
-
-\begin{frame} \frametitle{Fractional Leibniz rules}
-
-More generally, it holds that
+\medskip
+For $1<p_1,p_2\le \infty$, $\fr{1}{2}<p\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that
 \begin{align*}
  \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
  &\\
-   \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}, 
+   \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
 \end{align*}
-where 
-\begin{align*}
-&1<p_1,p_2\le \infty, \fr{1}{2}<p\le \infty, \hcline, \\
-&s\in 2\na_0 \text{ or } s>\tau_p,  \tau_p:=n({1}/{\min(p,1)}-1).
-\end{align*}
-(Different choices of $p_1$ and $p_2$ can be used on the right-hand sides of the inequalities above.)
+ \end{frame}
 
-\end{frame}
 
-\begin{frame} \frametitle{Weighted Leibniz-type rules for C--M multiplier operators II}
-
-For $w\in A_\infty,$  let $\tau_w=\inf\{\tau\in [1,\infty): w\in A_\tau\};$ if  $0<p,q\le \infty$ denote 
-\begin{equation*}
-\tau_{p,q}(w) := n \left(\frac{1}{\min(p/\tau_w,q,1)} - 1 \right).
-\end{equation*} 
-
-\begin{theorem}[N.--Thomson, 2018]\label{thm:CM:TL:B}  
-Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. Consider  $0 < q \leq \infty$ and $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ 
+\begin{frame}\frametitle{Fractional Leibniz rules}
+\begin{itemize}
+\item Case $1<p<\infty:$ 
+\begin{enumerate}[-]
+\item Kato--Ponce, 1988 (for Euler and Navier--Stokes).%: Coifman--Meyer multiplier operators and complex interpolation of analytic families of operators.
 
 \medskip
 
-If  $w_1,w_2\in A_\infty,$ $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$  and  $s > \tau_{p,q}(w),$  it holds that
-\begin{equation*}
-\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s}{q}{w_2} }.
-\end{equation*}
-If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above; moreover, if $w\in A_\infty,$ then 
-\begin{equation*}
-\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p}{s}{q}{w} } \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{g}{\tlw{p}{s}{q}{w}}.
-\end{equation*}
-\end{theorem}
-\end{frame}
+\item Christ--Weinstein, 1991 (for KdV).%: Paraproducts, Littlewood--Paley theory and Fefferman--Stein  inequalities.
 
+\medskip
 
-\begin{frame}{Previous Results}
-For $s \ge 0$ set $D^s:=(-\Delta)^{s/2},$ that is,
-\begin{align*}
-\widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
-\end{align*}
-%\begin{itemize}
-%\item $\norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}$
-%\end{itemize}
+\item Kenig--Ponce--Vega, 1993 (mixed-norm Lebesgue spaces, for KdV).%:   Paraproducts, Littlewood--Paley theory, Fefferman--Stein   inequalities.
 
-\bigskip
+\medskip
 
-Let $1<p_1,p_2<\infty$, $\fr{1}{2} < p < \infty$, $ \frac{1}{p_1} + \frac{1}{p_2} = \frac{1}{p} $ and  $s\in 2\N_0$ or  $s> n(\fr{1}{min(p,1)} - 1)$, $w_1 \in A_{p_1}$, $w_2 \in A_{p_2}$, $w =w^{p/p_1}_1 w^{p/p_2}_2$, and $\sigma$ a Coifman-Meyer multiplier.
+\item Gulisashvili--Kon, 1996 (for Schr\"odinger semigroups).
 
-\bigskip
+\end{enumerate}
 
-\begin{theorem}[Cruz-Uribe-Naibo, 2016]
-$ \norm{D^s(fg)}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}$
-\end{theorem}
+\medskip 
 
-\begin{theorem}[Brummer-Naibo, 2017]
-$\norm{D^s(T_\sigma(f,g))}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}$
-\end{theorem}
+\item Case $\frac{1}{2}<p<\infty:$  
+\begin{enumerate}[-]
+\item Muscalu--Schlag, 2013: homogeneous version.%, use of discretized paraproducts.
 
-%\begin{itemize}
-%
-%\item \begin{align*}
-% \norm{D^s(fg)}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}
-% \end{align*}
-%\item \begin{align*}
-%\norm{D^s(T_\sigma(f,g))}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}.
-% \end{align*}
-%
-%\end{itemize}
-\end{frame}
+\medskip
 
+\item Grafakos--Oh, 2014: homogeneous and inhomogeneous versions. 
 
-\begin{frame}{Definitions: Muckenhoupt Weights}
-\begin{itemize}
-\item For $0<p<\infty$ and a weight $w$ on $\rn$, we say that $f\in L^p(w)$ if 
- $$
-\norm{f}{\lebw{p}{w}}=\left(\int_\rn\abs{f(x)}^pw(x)\dx\right)^{\frac{1}{p}}<\infty.
- $$
-\item For $1<p<\infty$, a weight $w$ on $\rn$ is an $A_p$ weight if 
-\begin{equation*}
- \sup_Q\left(\frac{1}{\abs{Q}}\int_Qw(x)\dx\right)\left(\frac{1}{\abs{Q}}\int_Qw(x)^{-\frac{1}{p-1}}\dx\right)^{p-1}<\infty.
- \end{equation*}
- \bigskip
-\item $A_\infty=\bigcup_{p>1} A_p$
+\medskip
+
+\item Bernicot--Maldonado--Moen--Naibo, 2014: $s>n,$ related to inh. version.  
+
+\end{enumerate}
+
+\medskip 
+
+\item Case $p=\infty:$ 
+\begin{enumerate}[-]
+\item  Bourgain--Li, 2014. (Related work by Grafakos--Maldonado--Naibo, 2014.)
+\end{enumerate}
 \end{itemize}
 \end{frame}
 
 
+\begin{frame}{Coifman-Meyer multipliers}
+\begin{itemize}
+\item $\sigma \in \mathcal{C}^\infty(\mathbb{R}^{2n})$ is a Coifman-Meyer multiplier if for all $\alpha,\beta \in \mathbb{N}^n_0$ if 
+\[ \partial^\alpha_x \partial^\beta_y \sigma(x,y) \lesssim (|x| + |y|)^{-|\alpha| - |\beta|} \text{ for all } (x,y)\neq (0,0). \]
 
-\begin{frame}{Definitions: Weighted Triebel-Lizorkin Spaces}
+\medskip
+
+\item $T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta$
+
+\medskip
+
+\item Boundedness properties of operators associated to Coifman-Meyer multipliers are well known. In the setting of weighted Lebesgue spaces \[ ||T_\sigma(f,g)||_{L^p(w)} \lesssim ||f||_{L^{p_1}(w)} ||g||_{L^{p_2}(w)} \] where $\sigma$ is a Coifman-Meyer multiplier, $\hcline$, and $1<p_1,p_2<\infty$.
+\end{itemize}
+
+\end{frame}
+
+%\begin{frame}{Weighted Leibniz rules}
+%
+%Let $1<p_1,p_2<\infty$, $\fr{1}{2} < p < \infty$, $ \frac{1}{p_1} + \frac{1}{p_2} = \frac{1}{p} $ and  $s\in 2\N_0$ or  $s> n(\fr{1}{min(p,1)} - 1)$, $w_1 \in A_{p_1}$, $w_2 \in A_{p_2}$, $w =w^{p/p_1}_1 w^{p/p_2}_2$, and $\sigma$ a Coifman-Meyer multiplier.
+%
+%\bigskip
+%
+%\begin{theorem}[Cruz-Uribe-Naibo, 2016]
+%$ \norm{D^s(fg)}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}$
+%\end{theorem}
+%
+%\begin{theorem}[Brummer-Naibo, 2017]
+%$\norm{D^s(T_\sigma(f,g))}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}$
+%\end{theorem}
+%
+%%\begin{itemize}
+%%
+%%\item \begin{align*}
+%% \norm{D^s(fg)}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}
+%% \end{align*}
+%%\item \begin{align*}
+%%\norm{D^s(T_\sigma(f,g))}{L^p(w)} \lesssim  \norm{D^sf}{L^{p_1}(w_1)} \norm{g}{L^{p_2}(w_2)}+ \norm{f}{L^{p_1}(w_1)} \norm{D^sg}{L^{p_2}(w_2)}.
+%% \end{align*}
+%%
+%%\end{itemize}
+%\end{frame}
+
+\begin{frame}{Weighted Triebel-Lizorkin Spaces}
 Let $\psi$ be a function in $\sw$ satisfying the conditions
 \begin{itemize}
 \item supp($\widehat{\psi})\subset \{\xi \in \rn :\fr{1}{2} < |\xi| < 2 \}$
@@ -407,42 +418,67 @@ Let $\psi$ be a function in $\sw$ satisfying the conditions
 \item $\widehat{\Delta^\psi_j f}(\xi) := \widehat{\psi}(2^{-j}\xi)\widehat{f}(\xi)$
 \end{itemize}
 \bigskip
-For $s\in\re,$  $0<p<\infty,$  $0<q\le \infty$ and $w\in A_\infty,$   the homogeneous weighted Triebel-Lizorkin space $\tlw{p}{s}{q}{w}$ consists of all $f\in \swp/\mathcal{P}(\rn)$ such that 
+For $s\in\re,$  $0<p<\infty,$  $0<q\le \infty$ and $w\in A_\infty,$ the space $\tlw{p}{s}{q}{w}$ consists of all $f\in \swp/\mathcal{P}(\rn)$ such that 
 \begin{equation*}
 \norm{f}{\tlw{p}{s}{q}{w}}=\norm{\left(\sum_{j\in\ent}(2^{sj}|\Delta^\psi_jf|)^q\right)^{\frac{1}{q}}}{\lebw{p}{w}}<\infty.
 \end{equation*}
 
-\end{frame}
 
-\begin{frame}{Definitions: Weighted Hardy spaces}
-Let $\varphi\in \sw$ be such that $\int_{\rn}\varphi(x)\dx\neq 0.$ Given $0<p<\infty,$ the Hardy space $H^p(w)$ is defined as the class of tempered distributions such that
-\[
-\norm{f}{H^p(w)}:= \norm{\sup_{0<t<\infty} \abs{t^{-n}\varphi(t^{-1}\cdot)\ast f}}{L^p(w)}<\infty.
-\]
+ {\bf Remark:} 
+%  \begin{itemize}
+%  \item $H^p(w)\simeq\tlw{p}{0}{2}{w}$  for $0<p<\infty$ and $w\in A_\infty.$ 
+%  \item $\tlw{p}{0}{2}{w}\simeq L^p(w)\simeq H^p(w)$ and $\tlw{p}{s}{2}{w}\simeq \dot{W}^{s,p}(w)$ for $1<p<\infty,$ $s\in\re$ and $w\in A_p.$  
+%\end{itemize}
 
-  {\bf Remark:} 
-  \begin{itemize}
-  \item $H^p(w)\simeq\tlw{p}{0}{2}{w}$  for $0<p<\infty$ and $w\in A_\infty.$ 
-  \item $\tlw{p}{0}{2}{w}\simeq L^p(w)\simeq H^p(w)$ and $\tlw{p}{s}{2}{w}\simeq \dot{W}^{s,p}(w)$ for $1<p<\infty,$ $s\in\re$ and $w\in A_p.$  
-\end{itemize}
+
 \end{frame}
 
 
+%\begin{frame}{Muckenhoupt Weights}
+%\begin{itemize}
+%\item For $0<p<\infty$ and a weight $w$ on $\rn$, we say that $f\in L^p(w)$ if 
+% $$
+%\norm{f}{\lebw{p}{w}}=\left(\int_\rn\abs{f(x)}^pw(x)\dx\right)^{\frac{1}{p}}<\infty.
+% $$
+%\item For $1<p<\infty$, a weight $w$ on $\rn$ is an $A_p$ weight if 
+%\begin{equation*}
+% \sup_Q\left(\frac{1}{\abs{Q}}\int_Qw(x)\dx\right)\left(\frac{1}{\abs{Q}}\int_Qw(x)^{-\frac{1}{p-1}}\dx\right)^{p-1}<\infty.
+% \end{equation*}
+% \bigskip
+%\item $A_\infty=\bigcup_{p>1} A_p$
+%\end{itemize}
+%\end{frame}
 
-\begin{frame}{New Result}
+
+%\begin{frame}{Weighted Hardy spaces}
+%Let $\varphi\in \sw$ be such that $\int_{\rn}\varphi(x)\dx\neq 0.$ Given $0<p<\infty,$ the Hardy space $H^p(w)$ is defined as the class of tempered distributions such that
+%\[
+%\norm{f}{H^p(w)}:= \norm{\sup_{0<t<\infty} \abs{t^{-n}\varphi(t^{-1}\cdot)\ast f}}{L^p(w)}<\infty.
+%\]
+%
+%  {\bf Remark:} 
+%  \begin{itemize}
+%  \item $H^p(w)\simeq\tlw{p}{0}{2}{w}$  for $0<p<\infty$ and $w\in A_\infty.$ 
+%  \item $\tlw{p}{0}{2}{w}\simeq L^p(w)\simeq H^p(w)$ and $\tlw{p}{s}{2}{w}\simeq \dot{W}^{s,p}(w)$ for $1<p<\infty,$ $s\in\re$ and $w\in A_p.$  
+%\end{itemize}
+%\end{frame}
+
+
+
+\begin{frame}{Weighted Leibniz-type rules for C--M multiplier operators}
 For $w\in A_\infty,$  let $\tau_w=\inf\{\tau\in [1,\infty): w\in A_\tau\};$ if  $0<p,q\le \infty$ denote 
 \begin{equation*}
 \tau_{p,q}(w) := n \left(\frac{1}{\min(p/\tau_w,q,1)} - 1 \right).
 \end{equation*} 
 
-\begin{theorem}[Naibo--T., 2018] 
+\begin{theorem}[Naibo--T., 2018]\label{thm:CM:TL:B}  
 Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. Consider  $0 < q \leq \infty$ and $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ 
 
 \medskip
 
 If  $w_1,w_2\in A_\infty,$ $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$  and  $s > \tau_{p,q}(w),$  it holds that
 \begin{equation*}
-\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s}{q}{w_2} }.
+\norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} \lesssim \norm{D^s f}{\tlw{p_1}{0}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{\tlw{p_2}{0}{q}{w_2} }.
 \end{equation*}
 If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above; moreover, if $w\in A_\infty,$ then 
 \begin{equation*}
@@ -458,19 +494,21 @@ Lifting property for  weighted homogeneous Triebel-Lizorkin spaces: If $0 < p,q 
 $$\norm{f}{\dot{F}^s_{p,q}(w)}\simeq \norm{D^s f}{\dot{F}^0_{p,q}(w)}.$$
 
 
-\begin{corollary}[N.--Thomson, 2018]\label{coro:KP:CM:Hardy}  Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
+\begin{corollary}[Naibo--T., 2018]\label{coro:KP:CM:Hardy}  Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
 Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ 
 
 \medskip
 
 If  $w_1,w_2\in A_\infty,$  $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$ and   $s > \tau_{p,2}(w),$ it holds that
-\begin{equation}\label{KP:CM:Hardy}
+\begin{equation*}\label{KP:CM:Hardy}
 \norm{D^s(T_\sigma(f,g))}{H^p(w)} \lesssim \norm{D^s f}{H^{p_1}(w_1)} \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{H^{p_2}(w_2)}.
-\end{equation}
+\end{equation*}
 If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand side of \eqref{KP:CM:Hardy}; moreover, if $w\in A_\infty,$ then 
-\begin{equation}\label{Kp:CM:Hardy2}
+\begin{equation*}\label{Kp:CM:Hardy2}
 \norm{D^s(T_\sigma(f,g))}{H^p(w)} \lesssim \norm{D^s f}{H^{p}(w)} \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{D^s g}{H^{p}(w)}.
-\end{equation}
+\end{equation*}
+
+
 
 \end{corollary}
 \end{frame}
