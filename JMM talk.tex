@@ -285,42 +285,44 @@ Kansas State University
 \end{frame}
 
 
-\begin{frame}\frametitle{Leibniz rule}
+\begin{frame}\frametitle{Fractional Leibniz rules}
 \begin{align*}
 \partial^\alpha_x(fg)(x) & = \sum_{\alpha_1 + \alpha_2 = \alpha} c_{\alpha_1,\alpha_2} \partial^{\alpha_1}_x f(x) \partial^{\alpha_2}_x g(x)\\ \medskip
 & =\partial^\alpha_x f(x) g(x) + f(x) \partial^\alpha_x g(x) + ...
 \end{align*}
 
 \begin{itemize}
-\item For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2}$ that is,
-\begin{align*}
-\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
-\end{align*}
+%\item For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2}$ that is,
+%\begin{align*}
+%\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
+%\end{align*}
 \item For $1<p_1,p_2\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that \begin{align*}
  \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
  &\\
    \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
 \end{align*}
+
+\item Such estimates have applications to PDEs such as Navier-Stokes equations and Korteweg-de Vreis equations.
 \end{itemize}
 
 \end{frame}
 
 
 
-\begin{frame}\frametitle{Fractional Leibniz rules}
-For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2},$ that is,
-\begin{align*}
-\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
-\end{align*}
-
-\medskip
-For $1<p_1,p_2\le \infty$, $\fr{1}{2}<p\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that
-\begin{align*}
- \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
- &\\
-   \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
-\end{align*}
- \end{frame}
+%\begin{frame}\frametitle{Fractional Leibniz rules}
+%For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2},$ that is,
+%\begin{align*}
+%\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
+%\end{align*}
+%
+%\medskip
+%For $1<p_1,p_2\le \infty$, $\fr{1}{2}<p\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that
+%\begin{align*}
+% \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
+% &\\
+%   \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
+%\end{align*}
+% \end{frame}
 
 
 \begin{frame}\frametitle{Fractional Leibniz rules}
@@ -371,11 +373,12 @@ For $1<p_1,p_2\le \infty$, $\fr{1}{2}<p\le \infty$, $\hcline$, and $s\in 2\na_0 
 \begin{frame}\frametitle{Generalized Leibniz rules}
 
 \begin{itemize}
-\item
+\item We obtain more general Leibniz rules of the form
+\[ \norm{T_\sigma(f,g)}{X} \lesssim \norm{f}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{g}{Z_2}. \]
+
+\item $T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta$
 \bigskip
-\item
-\bigskip
-\item 
+\item If $\sigma \equiv 1$ then $T_\sigma(f,g) = fg.$
 \end{itemize}
 
 \end{frame}
@@ -384,10 +387,6 @@ For $1<p_1,p_2\le \infty$, $\fr{1}{2}<p\le \infty$, $\hcline$, and $s\in 2\na_0 
 \begin{itemize}
 \item $\sigma \in \mathcal{C}^\infty(\mathbb{R}^{2n})$ is a Coifman-Meyer multiplier if for all $\alpha,\beta \in \mathbb{N}^n_0$ if 
 \[ \partial^\alpha_x \partial^\beta_y \sigma(x,y) \lesssim (|x| + |y|)^{-|\alpha| - |\beta|} \text{ for all } (x,y)\neq (0,0). \]
-
-\bigskip
-
-\item $T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta$
 
 \bigskip
 
