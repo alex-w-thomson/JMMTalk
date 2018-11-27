@@ -292,11 +292,12 @@ Kansas State University
 \end{align*}
 
 \begin{itemize}
-%\item For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2}$ that is,
+%\item that is,
 %\begin{align*}
 %\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
 %\end{align*}
-\item For $1<p_1,p_2\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that \begin{align*}
+\item  For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2}$
+\begin{align*}
  \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
  &\\
    \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
@@ -306,7 +307,7 @@ Kansas State University
 \end{itemize}
 
 \end{frame}
-
+%For $1<p_1,p_2\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that 
 
 
 %\begin{frame}\frametitle{Fractional Leibniz rules}
@@ -373,8 +374,9 @@ Kansas State University
 \begin{frame}\frametitle{Generalized Leibniz rules}
 
 \begin{itemize}
-\item We obtain more general Leibniz rules of the form
-\[ \norm{T_\sigma(f,g)}{X} \lesssim \norm{f}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{g}{Z_2}. \]
+\item Closely related estimates are
+\[ \norm{D^sT_\sigma(f,g)}{X} \lesssim \norm{D^sf}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{D^sg}{Z_2}, \]
+\[ \norm{J^sT_\sigma(f,g)}{X} \lesssim \norm{J^sf}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{J^sg}{Z_2}. \]
 
 \item $T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta$
 \bigskip
@@ -530,23 +532,29 @@ If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand si
 
 \begin{frame}\frametitle{Weighted Leibniz-type rules for C--M multiplier operators II}
 
-Lifting property for  weighted homogeneous Triebel-Lizorkin spaces: If $0 < p,q < \infty$ and $w\in A_\infty,$ it holds that 
-$$\norm{f}{\dot{F}^s_{p,q}(w)}\simeq \norm{D^s f}{\dot{F}^0_{p,q}(w)}.$$
+%Lifting property for  weighted homogeneous Triebel-Lizorkin spaces: If $0 < p,q < \infty$ and $w\in A_\infty,$ it holds that 
+%$$\norm{f}{\dot{F}^s_{p,q}(w)}\simeq \norm{D^s f}{\dot{F}^0_{p,q}(w)}.$$
 
 
-
-
-\medskip
-\begin{itemize}
-
-\item   Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
+\begin{corollary}\label{coro:KP:CM:Hardy}
+Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
 Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\infty,$  $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$ and   $s > \tau_{p,2}(w),$ it holds that
 \begin{equation*}\label{KP:CM:Hardy}
 \norm{D^sT_\sigma(f,g)}{H^p(w)} \lesssim \norm{D^s f}{H^{p_1}(w_1)} \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{H^{p_2}(w_2)}.
 \end{equation*}
+\end{corollary}
+
+\medskip
+\begin{itemize}
+
+%\item   Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
+%Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\infty,$  $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$ and   $s > \tau_{p,2}(w),$ it holds that
+%\begin{equation*}\label{KP:CM:Hardy}
+%\norm{D^sT_\sigma(f,g)}{H^p(w)} \lesssim \norm{D^s f}{H^{p_1}(w_1)} \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{H^{p_2}(w_2)}.
+%\end{equation*}
 
 
-\item When $w \equiv 1$ estimate \ref{KP:CM:Hardy} extends and improves the Leibniz rule in Lebesgue spaces by allowing $p,\frac{1}{2}$ and a larger quantity on the left-hand side.
+\item When $w \equiv 1$ estimate \ref{KP:CM:Hardy} extends and improves the Leibniz rule in Lebesgue spaces by allowing $p<\frac{1}{2}$ and a larger quantity on the left-hand side.
 
 \end{itemize}
 \end{frame}
@@ -554,7 +562,7 @@ Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\i
 
 
 
-\begin{frame}\frametitle{Other settings for Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy}}
+\begin{frame}\frametitle{Other settings for Leibniz-type rules}
 
 \begin{itemize}
 \item Coifman--Meyer multipliers of order $m:$
@@ -571,7 +579,13 @@ as well as versions of the other estimates in Theorem~\ref{thm:CM:TL:B} and Coro
 
 \item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in other function space settings: weighted homogeneous Besov spaces and weighted inhomogeneous Triebel--Lizorkin and Besov spaces; the latter contexts involve the operator $J^s.$
 
-\bigskip
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Other settings for Leibniz-type rules}
+\begin{itemize}
+
 
 \item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in homogeneous and inhomogeneous Triebel-Lizorkin and Besov spaces based in other function spaces such as variable Lebesgue, weighted Lorrentz, and weighted Morrey spaces. 
 
