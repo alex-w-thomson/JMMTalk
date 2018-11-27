@@ -262,7 +262,8 @@
 
 
 
-\title[Leibniz-type rules]{Bilinear multiplier operators Leibniz-type rules}
+\title[Leibniz-type rules]{Leibniz-type rules and applications to scattering
+properties of PDEs}
 \author[Alex Thomson]{Alex Thomson}
 
 
@@ -287,23 +288,21 @@ Kansas State University
 
 \begin{frame}\frametitle{Fractional Leibniz rules}
 \begin{align*}
-\partial^\alpha_x(fg)(x) & = \sum_{\alpha_1 + \alpha_2 = \alpha} c_{\alpha_1,\alpha_2} \partial^{\alpha_1}_x f(x) \partial^{\alpha_2}_x g(x)\\ \medskip
+\partial^\alpha(fg)(x) & = \sum_{\alpha_1 + \alpha_2 = \alpha} c_{\alpha_1,\alpha_2} \partial^{\alpha_1} f(x) \partial^{\alpha_2} g(x)\\ \medskip
 & =\partial^\alpha_x f(x) g(x) + f(x) \partial^\alpha_x g(x) + ...
 \end{align*}
-
+\medskip
 \begin{itemize}
 %\item that is,
 %\begin{align*}
 %\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
 %\end{align*}
-\item  For $s \ge 0$ set $J^s:=(1-\Delta)^{s/2}$  and  $D^s:=(-\Delta)^{s/2}$
-\begin{align*}
- \norm{J^s(fg)}{L^p} &\lesssim  \norm{J^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{J^sg}{L^{p_2}},\\
- &\\
-   \norm{D^s(fg)}{L^p} &\lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
-\end{align*}
-
-\item Such estimates have applications to PDEs such as Navier-Stokes equations and Korteweg-de Vreis equations.
+\item  For $s \ge 0$ set $D^s:=(-\Delta)^{s/2}$. For $1<p_1,p_2\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that 
+\[
+   \norm{D^s(fg)}{L^p} \lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
+\]
+\medskip
+\item Such estimates have applications to PDEs such as Navier-Stokes equations and Korteweg-de Vreis equations(Kato-Ponce '88, Christ-Weinstein '91, Kenig-Ponce-Vega '93).
 \end{itemize}
 
 \end{frame}
@@ -330,19 +329,19 @@ Kansas State University
 \begin{itemize}
 \item Case $1<p<\infty:$ 
 \begin{enumerate}[-]
-\item Kato--Ponce, 1988 (for Euler and Navier--Stokes).%: Coifman--Meyer multiplier operators and complex interpolation of analytic families of operators.
+\item[-] Kato--Ponce, 1988 (for Euler and Navier--Stokes).%: Coifman--Meyer multiplier operators and complex interpolation of analytic families of operators.
 
 \medskip
 
-\item Christ--Weinstein, 1991 (for KdV).%: Paraproducts, Littlewood--Paley theory and Fefferman--Stein  inequalities.
+\item[-] Christ--Weinstein, 1991 (for KdV).%: Paraproducts, Littlewood--Paley theory and Fefferman--Stein  inequalities.
 
 \medskip
 
-\item Kenig--Ponce--Vega, 1993 (mixed-norm Lebesgue spaces, for KdV).%:   Paraproducts, Littlewood--Paley theory, Fefferman--Stein   inequalities.
+\item[-] Kenig--Ponce--Vega, 1993 (mixed-norm Lebesgue spaces, for KdV).%:   Paraproducts, Littlewood--Paley theory, Fefferman--Stein   inequalities.
 
 \medskip
 
-\item Gulisashvili--Kon, 1996 (for Schr\"odinger semigroups).
+\item[-] Gulisashvili--Kon, 1996 (for Schr\"odinger semigroups).
 
 \end{enumerate}
 
@@ -350,48 +349,54 @@ Kansas State University
 
 \item Case $\frac{1}{2}<p<\infty:$  
 \begin{enumerate}[-]
-\item Muscalu--Schlag, 2013: homogeneous version.%, use of discretized paraproducts.
-
+\item[-] Muscalu--Schlag, 2013%, use of discretized paraproducts.
 \medskip
-
-\item Grafakos--Oh, 2014: homogeneous and inhomogeneous versions. 
-
+\item[-] Grafakos--Oh, 2014 
 \medskip
-
-\item Bernicot--Maldonado--Moen--Naibo, 2014: $s>n,$ related to inh. version.  
-
+\item[-] Bernicot--Maldonado--Moen--Naibo, 2014: $s>n,$ for related estimates.  
 \end{enumerate}
 
 \medskip 
 
 \item Case $p=\infty:$ 
 \begin{enumerate}[-]
-\item  Bourgain--Li, 2014. (Related work by Grafakos--Maldonado--Naibo, 2014.)
+\item[-]  Bourgain--Li, 2014. (Related work by Grafakos--Maldonado--Naibo, 2014.)
 \end{enumerate}
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Generalized Leibniz rules}
+\begin{frame}\frametitle{Leibniz-type rules for bilinear multiplier operators}
 
-\begin{itemize}
-\item Closely related estimates are
-\[ \norm{D^sT_\sigma(f,g)}{X} \lesssim \norm{D^sf}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{D^sg}{Z_2}, \]
-\[ \norm{J^sT_\sigma(f,g)}{X} \lesssim \norm{J^sf}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{J^sg}{Z_2}. \]
 
-\item $T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta$
+ We will look at estimates of the form
+\[ \norm{D^sT_\sigma(f,g)}{X} \lesssim \norm{D^sf}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{D^sg}{Z_2} \]
+in weighted function spaces.
+\\
 \bigskip
-\item If $\sigma \equiv 1$ then $T_\sigma(f,g) = fg.$
-\end{itemize}
+The bilinear multiplier operator $T_\sigma$ is defined as
+ \[T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta.\]
+ \\
+\bigskip
+\textbf{Remark:} If $\sigma \equiv 1$ then $T_\sigma(f,g) = fg.$
+
 
 \end{frame}
 
 \begin{frame}{Coifman-Meyer multipliers}
 \begin{itemize}
-\item $\sigma \in \mathcal{C}^\infty(\mathbb{R}^{2n})$ is a Coifman-Meyer multiplier if for all $\alpha,\beta \in \mathbb{N}^n_0$ if 
-\[ \partial^\alpha_x \partial^\beta_y \sigma(x,y) \lesssim (|x| + |y|)^{-|\alpha| - |\beta|} \text{ for all } (x,y)\neq (0,0). \]
+\item $\sigma \in \mathcal{C}^\infty(\mathbb{R}^{2n})$ is a Coifman-Meyer multiplier if for all $\alpha,\beta \in \mathbb{N}^n_0$ 
+\[ \partial^\alpha_x \partial^\beta_y \sigma(\xi,\eta) \lesssim (|\xi| + |\eta|)^{-|\alpha| - |\beta|} \text{ for all } (\xi,\eta)\neq (0,0). \]
 
 \bigskip
+\item Operators associated to Coifman-Meyer multipliers have been extensively studied
+\begin{enumerate}[-]
+\item[-] Coifman-Meyer '78
+\item[-] Grafakos-Torres
+\item[-] Kenig-Stein
+\item[-] Grafakos-Martell
+\item[-]Lerner et al.
 
+\end{enumerate}
 \item If $\sigma$ is a Coifman-Meyer multiplier, $\hcline$, and $1<p_1,p_2<\infty$ \[||T_\sigma(f,g)||_{L^p(w)} \lesssim ||f||_{L^{p_1}(w)} ||g||_{L^{p_2}(w)}.\]
 \end{itemize}
 
@@ -424,22 +429,23 @@ Kansas State University
 %\end{frame}
 
 \begin{frame}{Weighted Triebel-Lizorkin Spaces}
-Let $\psi$ be a function in $\sw$ satisfying the conditions
-\begin{itemize}
-\item supp($\widehat{\psi})\subset \{\xi \in \rn :\fr{1}{2} < |\xi| < 2 \}$
-%\medskip
-\item $|\widehat{\psi}(\xi)| > c$ for all $\xi$ such that $\fr{3}{5}<|\xi|<\fr{5}{3}$ and some $c>0$
-%\medskip
-\item $\widehat{\Delta^\psi_j f}(\xi) := \widehat{\psi}(2^{-j}\xi)\widehat{f}(\xi)$
-\end{itemize}
-\bigskip
+%Let $\psi$ be a function in $\sw$ satisfying the conditions
+%\begin{itemize}
+%\item supp($\widehat{\psi})\subset \{\xi \in \rn :\fr{1}{2} < |\xi| < 2 \}$
+%%\medskip
+%\item $|\widehat{\psi}(\xi)| > c$ for all $\xi$ such that $\fr{3}{5}<|\xi|<\fr{5}{3}$ and some $c>0$
+%%\medskip
+%\item $\widehat{\Delta^\psi_j f}(\xi) := \widehat{\psi}(2^{-j}\xi)\widehat{f}(\xi)$
+%\end{itemize}
+%\bigskip
 %For $s\in\re,$  $0<p<\infty,$  $0<q\le \infty$ and $w\in A_\infty,$ 
-The space $\tlw{p}{s}{q}{w}$ consists of all $f\in \swp/\mathcal{P}(\rn)$ such that 
+Given a weight $w$ the space $\tlw{p}{s}{q}{w}$ consists of all $f\in \swp/\mathcal{P}(\rn)$ such that 
 \begin{equation*}
-\norm{f}{\tlw{p}{s}{q}{w}}=\norm{\left(\sum_{j\in\ent}(2^{sj}|\Delta^\psi_jf|)^q\right)^{\frac{1}{q}}}{\lebw{p}{w}}<\infty.
+\norm{f}{\tlw{p}{s}{q}{w}}=\norm{\left(\sum_{j\in\ent}(2^{sj}|\Delta	_jf|)^q\right)^{\frac{1}{q}}}{\lebw{p}{w}}<\infty.
 \end{equation*}
-
-
+where $\Delta_j$ is a Littlewood-Paley operator.
+\\
+\bigskip
  {\bf Remark:} 
  \begin{itemize}
   \item $H^p(w)\simeq\tlw{p}{0}{2}{w}$  for $0<p<\infty$ and $w\in A_\infty.$ 
@@ -496,10 +502,11 @@ If  $w_1,w_2\in A_\infty,$ $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$  and  $s > \tau_{
 \begin{equation*}
 \norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} \lesssim \norm{D^s f}{\tlw{p_1}{0}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{\tlw{p_2}{0}{q}{w_2} }.
 \end{equation*}
-If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above; moreover, if $w\in A_\infty,$ then 
-\begin{equation*}
-\norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} \lesssim \norm{D^s f}{\tlw{p}{0}{q}{w} } \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{D^s g}{\tlw{p}{0}{q}{w}}.
-\end{equation*}
+If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above.
+%; moreover, if $w\in A_\infty,$ then 
+%\begin{equation*}
+%\norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} \lesssim \norm{D^s f}{\tlw{p}{0}{q}{w} } \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{D^s g}{\tlw{p}{0}{q}{w}}.
+%\end{equation*}
 \end{theorem}
 \end{frame}
 
@@ -530,7 +537,7 @@ If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand si
 %\end{frame}
 
 
-\begin{frame}\frametitle{Weighted Leibniz-type rules for C--M multiplier operators II}
+\begin{frame}\frametitle{Weighted Leibniz-type rules for C--M multiplier operators}
 
 %Lifting property for  weighted homogeneous Triebel-Lizorkin spaces: If $0 < p,q < \infty$ and $w\in A_\infty,$ it holds that 
 %$$\norm{f}{\dot{F}^s_{p,q}(w)}\simeq \norm{D^s f}{\dot{F}^0_{p,q}(w)}.$$
@@ -545,7 +552,6 @@ Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\i
 \end{corollary}
 
 \medskip
-\begin{itemize}
 
 %\item   Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
 %Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\infty,$  $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$ and   $s > \tau_{p,2}(w),$ it holds that
@@ -554,9 +560,10 @@ Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\i
 %\end{equation*}
 
 
-\item When $w \equiv 1$ estimate \ref{KP:CM:Hardy} extends and improves the Leibniz rule in Lebesgue spaces by allowing $p<\frac{1}{2}$ and a larger quantity on the left-hand side.
+ Case: When $w =w_1=w_2=1$ and $\sigma\equiv 1$ it holds that 
+ \[ \norm{D^sfg}{H^p} \lesssim \norm{D^s f}{H^{p_1}} \norm{g}{H^{p_2}} +  \norm{f}{H^{p_1}}   \norm{D^s g}{H^{p_2}}.\]
+ This extends and improves the Leibniz rule in the introduction by allowing $0<p,p_1,p_2<\frac{1}{2}$ and a larger norm on the left-hand side.
 
-\end{itemize}
 \end{frame}
 
 
@@ -579,21 +586,26 @@ as well as versions of the other estimates in Theorem~\ref{thm:CM:TL:B} and Coro
 
 \item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in other function space settings: weighted homogeneous Besov spaces and weighted inhomogeneous Triebel--Lizorkin and Besov spaces; the latter contexts involve the operator $J^s.$
 
+\bigskip
+\item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in homogeneous and inhomogeneous Triebel-Lizorkin and Besov spaces based in other function spaces such as variable Lebesgue, weighted Lorrentz, and weighted Morrey spaces. 
 
 \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Other settings for Leibniz-type rules}
-\begin{itemize}
+As an application of Theorem 1 we obtain scattering properties of systems of PDEs of the form
+\begin{equation*}\label{eq:Ds:Ds}
+\left\{ \begin{array}{lll}  \partial_t u =vw, & \partial_t v +D^\gamma v = 0, & \partial_t w + D^\gamma w = 0, \\
+  u(0,x)=0,&v(0,x)=f(x),&w(0,x) = g(x).
+ \end{array} \right.
+\end{equation*}
+\begin{equation*}\label{def:u:infty}
+\lim\limits_{t \to \infty} u(t, \cdot ) = u_\infty \quad \text{in } \swp;
+\end{equation*}
+\begin{equation*}\label{eq:scattering1}
+\norm{u_\infty}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s-\gamma}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s-\gamma}{q}{w_2} },
+\end{equation*}
 
-
-\item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in homogeneous and inhomogeneous Triebel-Lizorkin and Besov spaces based in other function spaces such as variable Lebesgue, weighted Lorrentz, and weighted Morrey spaces. 
-
-\bigskip
-
-\item These results have applications to scattering properties of certain systems of PDEs. 
-
-\end{itemize}
 \end{frame}
 
 \begin{frame}
