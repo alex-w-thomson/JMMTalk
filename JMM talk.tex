@@ -289,7 +289,7 @@ Kansas State University
 \begin{frame}\frametitle{Fractional Leibniz rules}
 \begin{align*}
 \partial^\alpha(fg)(x) & = \sum_{\alpha_1 + \alpha_2 = \alpha} c_{\alpha_1,\alpha_2} \partial^{\alpha_1} f(x) \partial^{\alpha_2} g(x)\\ \medskip
-& =\partial^\alpha_x f(x) g(x) + f(x) \partial^\alpha_x g(x) + ...
+& =\partial^\alpha f(x) g(x) + f(x) \partial^\alpha g(x) + ...
 \end{align*}
 \medskip
 \begin{itemize}
@@ -297,12 +297,12 @@ Kansas State University
 %\begin{align*}
 %\widehat{J^s(f)}(\xi) =(1+|\xi|^2)^{s/2} \,\hat{f}(\xi),\quad \widehat{D^s(f)}(\xi) =|\xi|^s \,\hat{f}(\xi).
 %\end{align*}
-\item  For $s \ge 0$ set $D^s:=(-\Delta)^{s/2}$. For $1<p_1,p_2\le \infty$, $\hcline$, and $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$ it holds that 
+\item  For $s \ge 0$ set $D^s:=(-\Delta)^{s/2}$. For $s\in 2\na_0 \text{ or } s>n({1}/{\min(p,1)}-1)$, $1<p_1,p_2\le \infty$, and $\hcline$  it holds that 
 \[
    \norm{D^s(fg)}{L^p} \lesssim  \norm{D^sf}{L^{p_1}} \norm{g}{L^{p_2}}+ \norm{f}{L^{p_1}} \norm{D^sg}{L^{p_2}}.
 \]
 \medskip
-\item Such estimates have applications to PDEs such as Navier-Stokes equations and Korteweg-de Vreis equations(Kato-Ponce '88, Christ-Weinstein '91, Kenig-Ponce-Vega '93).
+\item Such estimates have applications to PDEs such as Navier-Stokes equations and Korteweg-de Vreis equations (Kato-Ponce '88, Christ-Weinstein '91, Kenig-Ponce-Vega '93).
 \end{itemize}
 
 \end{frame}
@@ -370,13 +370,13 @@ Kansas State University
 
  We will look at estimates of the form
 \[ \norm{D^sT_\sigma(f,g)}{X} \lesssim \norm{D^sf}{Y_1}\norm{g}{Z_1}+\norm{f}{Y_2}\norm{D^sg}{Z_2} \]
-in weighted function spaces.
-\\
-\bigskip
+where $X$, $Y_1$, $Y_2$, $Z_1$, and $Z_2$ are weighted function spaces.
+
+\vspace{8mm}
 The bilinear multiplier operator $T_\sigma$ is defined as
  \[T_\sigma(f,g)(x) = \int_{\mathbb{R}^{2n}} \sigma(\xi,\eta) \widehat{f}(\xi)\widehat{g}(\eta) e^{2\pi i x\cdot (\xi + \eta)} d\xi d\eta.\]
  \\
-\bigskip
+\vspace{8mm}
 \textbf{Remark:} If $\sigma \equiv 1$ then $T_\sigma(f,g) = fg.$
 
 
@@ -385,19 +385,22 @@ The bilinear multiplier operator $T_\sigma$ is defined as
 \begin{frame}{Coifman-Meyer multipliers}
 \begin{itemize}
 \item $\sigma \in \mathcal{C}^\infty(\mathbb{R}^{2n})$ is a Coifman-Meyer multiplier if for all $\alpha,\beta \in \mathbb{N}^n_0$ 
-\[ \partial^\alpha_x \partial^\beta_y \sigma(\xi,\eta) \lesssim (|\xi| + |\eta|)^{-|\alpha| - |\beta|} \text{ for all } (\xi,\eta)\neq (0,0). \]
+\[ |\partial^\alpha_\xi \partial^\beta_\eta \sigma(\xi,\eta)| \lesssim (|\xi| + |\eta|)^{-|\alpha| - |\beta|} \text{ for all } (\xi,\eta)\neq (0,0). \]
 
 \bigskip
 \item Operators associated to Coifman-Meyer multipliers have been extensively studied
 \begin{enumerate}[-]
 \item[-] Coifman-Meyer '78
-\item[-] Grafakos-Torres
-\item[-] Kenig-Stein
-\item[-] Grafakos-Martell
-\item[-]Lerner et al.
+\item[-] Kenig-Stein '99
+\item[-] Grafakos-Torres '02
+\item[-] Grafakos-Martell '04
+\item[-]Lerner et al. '09
 
 \end{enumerate}
-\item If $\sigma$ is a Coifman-Meyer multiplier, $\hcline$, and $1<p_1,p_2<\infty$ \[||T_\sigma(f,g)||_{L^p(w)} \lesssim ||f||_{L^{p_1}(w)} ||g||_{L^{p_2}(w)}.\]
+
+\bigskip
+
+\item In particular operators associated to Coifman-Meyer multipliers are bounded in Lebesgue spaces and weighted Lebesgue spaces.
 \end{itemize}
 
 \end{frame}
@@ -443,7 +446,7 @@ Given a weight $w$ the space $\tlw{p}{s}{q}{w}$ consists of all $f\in \swp/\math
 \begin{equation*}
 \norm{f}{\tlw{p}{s}{q}{w}}=\norm{\left(\sum_{j\in\ent}(2^{sj}|\Delta	_jf|)^q\right)^{\frac{1}{q}}}{\lebw{p}{w}}<\infty.
 \end{equation*}
-where $\Delta_j$ is a Littlewood-Paley operator.
+where $\{\Delta_j\}$ is a family of Littlewood-Paley operators.
 \\
 \bigskip
  {\bf Remark:} 
@@ -502,7 +505,7 @@ If  $w_1,w_2\in A_\infty,$ $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$  and  $s > \tau_{
 \begin{equation*}
 \norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} \lesssim \norm{D^s f}{\tlw{p_1}{0}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{D^s g}{\tlw{p_2}{0}{q}{w_2} }.
 \end{equation*}
-If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand sides of the inequality above.
+If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand side of the inequality above.
 %; moreover, if $w\in A_\infty,$ then 
 %\begin{equation*}
 %\norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} \lesssim \norm{D^s f}{\tlw{p}{0}{q}{w} } \norm{g}{L^\infty} +  \norm{f}{L^\infty}   \norm{D^s g}{\tlw{p}{0}{q}{w}}.
@@ -543,7 +546,7 @@ If $w_1=w_2$ then different pairs of $p_1, p_2$ can be used on the right hand si
 %$$\norm{f}{\dot{F}^s_{p,q}(w)}\simeq \norm{D^s f}{\dot{F}^0_{p,q}(w)}.$$
 
 
-\begin{corollary}\label{coro:KP:CM:Hardy}
+\begin{corollary}[Naibo--T., 2018]\label{coro:KP:CM:Hardy}
 Let $\sigma(\xi,\eta),$ $\xi,\eta\in\rn,$ be a Coifman-Meyer multiplier. 
 Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\infty,$  $w=w_1^{{p}/{p_1}} w_2^{{p}/{p_2}}$ and   $s > \tau_{p,2}(w),$ it holds that
 \begin{equation*}\label{KP:CM:Hardy}
@@ -560,16 +563,16 @@ Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\i
 %\end{equation*}
 
 
- Case: When $w =w_1=w_2=1$ and $\sigma\equiv 1$ it holds that 
- \[ \norm{D^sfg}{H^p} \lesssim \norm{D^s f}{H^{p_1}} \norm{g}{H^{p_2}} +  \norm{f}{H^{p_1}}   \norm{D^s g}{H^{p_2}}.\]
- This extends and improves the Leibniz rule in the introduction by allowing $0<p,p_1,p_2<\frac{1}{2}$ and a larger norm on the left-hand side.
+\textbf{Remark:} When $w =w_1=w_2=1$ and $\sigma\equiv 1$ it holds that 
+ \[ \norm{D^s(fg)}{H^p} \lesssim \norm{D^s f}{H^{p_1}} \norm{g}{H^{p_2}} +  \norm{f}{H^{p_1}}   \norm{D^s g}{H^{p_2}}.\]
+ This extends and improves the Leibniz rule in the introduction by allowing $0<p,p_1,p_2<\infty$ and a larger norm on the left-hand side.
 
 \end{frame}
 
 
 
 
-\begin{frame}\frametitle{Other settings for Leibniz-type rules}
+\begin{frame}\frametitle{Other settings for Theorem 1 and Corollary 2}
 
 \begin{itemize}
 \item Coifman--Meyer multipliers of order $m:$
@@ -577,33 +580,47 @@ Consider  $0 < p, p_1, p_2  < \infty$  such that $\hcline.$ If  $w_1,w_2\in A_\i
 \abs{\partial_\xi^\alpha\partial_\eta^\beta\sigma(\xi,\eta)}\lesssim (\abs{\xi}+\abs{\eta})^{m-\abs{\alpha+\beta}} \quad \quad \forall (\xi,\eta)\neq(0,0).
 \end{equation*}
 The corresponding multiplier operators satisfy
-\begin{equation*}
-\norm{T_\sigma(f,g)}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s+m}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s+m}{q}{w_2} },
-\end{equation*}
+
+\begin{align*}
+\norm{D^s T_\sigma(f,g)}{\tlw{p}{0}{q}{w}} &\lesssim \norm{D^{s+m}f}{\tlw{p_1}{0}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} \\
+& +  \norm{f}{H^{p_1}(w_1)} \norm{D^{s+m}g}{\tlw{p_2}{0}{q}{w_2} }.
+\end{align*}
+
 as well as versions of the other estimates in Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy}.
 
 \bigskip
 
-\item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in other function space settings: weighted homogeneous Besov spaces and weighted inhomogeneous Triebel--Lizorkin and Besov spaces; the latter contexts involve the operator $J^s.$
 
-\bigskip
-\item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in homogeneous and inhomogeneous Triebel-Lizorkin and Besov spaces based in other function spaces such as variable Lebesgue, weighted Lorrentz, and weighted Morrey spaces. 
+\item Theorem~\ref{thm:CM:TL:B} and Corollary~\ref{coro:KP:CM:Hardy} hold in other function space settings: 
 
+\begin{enumerate}[-]
+\item[-] weighted homogeneous Besov spaces and weighted inhomogeneous Triebel--Lizorkin and Besov spaces,
+
+\item[-] homogeneous and inhomogeneous Triebel-Lizorkin and Besov spaces based in other function spaces such as variable Lebesgue, weighted Lorentz, and weighted Morrey spaces. 
+\end{enumerate}
 \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Other settings for Leibniz-type rules}
+\begin{frame}\frametitle{Scattering properties of PDEs}
 As an application of Theorem 1 we obtain scattering properties of systems of PDEs of the form
 \begin{equation*}\label{eq:Ds:Ds}
 \left\{ \begin{array}{lll}  \partial_t u =vw, & \partial_t v +D^\gamma v = 0, & \partial_t w + D^\gamma w = 0, \\
   u(0,x)=0,&v(0,x)=f(x),&w(0,x) = g(x).
  \end{array} \right.
 \end{equation*}
+
+\bigskip
+
+We say that $u(t,x)$ scatters to $u_\infty$ if
 \begin{equation*}\label{def:u:infty}
-\lim\limits_{t \to \infty} u(t, \cdot ) = u_\infty \quad \text{in } \swp;
+\lim\limits_{t \to \infty} u(t, \cdot ) = u_\infty \quad \text{in } \swp.
 \end{equation*}
+
+\bigskip
+
+Then using Theorem~\ref{thm:CM:TL:B} we obtain
 \begin{equation*}\label{eq:scattering1}
-\norm{u_\infty}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s-\gamma}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s-\gamma}{q}{w_2} },
+\norm{u_\infty}{\tlw{p}{s}{q}{w}} \lesssim \norm{f}{\tlw{p_1}{s-\gamma}{q}{w_1} } \norm{g}{H^{p_2}(w_2)} +  \norm{f}{H^{p_1}(w_1)}   \norm{g}{\tlw{p_2}{s-\gamma}{q}{w_2} }.
 \end{equation*}
 
 \end{frame}
